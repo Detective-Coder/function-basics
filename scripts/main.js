@@ -20,15 +20,67 @@
 
 // Your job is to write a function that accepts any band name as an argument. The function will increment a global variable by one each time it is invoked, and return that number, and the band name concatenated together.
 
-let bandNumber = 0;
+// let bandNumber = 0;
 
-function takeNumber(bandName) {
-  bandNumber++;
-  return bandNumber + "." + " " + bandName;
+// function takeNumber(bandName) {
+//   bandNumber++;
+//   return bandNumber + "." + " " + bandName;
+// }
+
+// const scum = takeNumber("Galactic Scum");
+// console.log(scum);  
+
+// const under = takeNumber("Underdogs");
+// console.log(under); 
+
+const hamburger = {
+	name: 'Hamburger',
+	type: 'beef',
+	cooked: false,
+}
+const zucchini = {
+	name: 'Zucchini',
+	type: 'vegetable',
+	cooked: false,
+}
+const chickenBreast = {
+	name: 'Chicken Breast',
+	type: 'chicken',
+	cooked: false,
+}
+const corn = {
+	name: 'Corn',
+	type: 'vegetable',
+	cooked: false,
+}
+const steak = {
+	name: 'Steak',
+	type: 'beef',
+	cooked: false,
 }
 
-const scum = takeNumber("Galactic Scum");
-console.log(scum);  // This should print "1. Galactic Scum" in the console
+// An array that is grouping the objects together.
+const foods = [hamburger, zucchini, chickenBreast, corn, steak];
 
-const under = takeNumber("Underdogs");
-console.log(under);  // This should print "2. Underdogs" in the console
+// An empty array that will store the objects after the `grill()` function cooks the food.
+const cookedFood = [];
+
+// This exercise does not require you to alter this function. But read it. See if you can follow what it takes in, executes, and returns.
+
+// The grill() function. Copy this into your JavaScript as well.
+
+function grill (currentObject) {
+    // Modify the food so that it is cooked
+    currentObject.cooked = true;
+
+    // Put the cooked food into the appropriate array
+    cookedFood.push(currentObject);
+};
+
+// Your task is to iterate over the array of foods and invoke the function for each item so that the cookedFood array contains all of the items after they are cooked.
+
+for (let i = 0; i < foods.length; i++) {
+  grill(foods[i]);
+}
+
+console.log(cookedFood);
